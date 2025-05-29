@@ -4,7 +4,7 @@ import os
 
 def text_to_picture(
     prompt: str,
-    output_path: str,
+    output_path: str, # Changed to be just the filename
     model_name: str = "runwayml/stable-diffusion-v1-5",
     height: int = 512,
     width: int = 512,
@@ -20,7 +20,8 @@ def text_to_picture(
 
     Args:
         prompt (str): The text prompt to generate the image from.
-        output_path (str): The file path where the generated image will be saved (e.g., "output_image.png").
+        output_path (str): The filename for the generated image (e.g., "output_image.png").
+                           The image will be saved in the current executing script's directory.
         model_name (str): The name of the pre-trained Stable Diffusion model to use.
                           Defaults to "runwayml/stable-diffusion-v1-5".
         height (int): The height of the generated image in pixels. Defaults to 512.
@@ -78,7 +79,9 @@ def text_to_picture(
             generator=generator
         ).images[0]
 
-        # 5. Save the image
+        # 5. Save the image in the current directory
+        # No need for os.makedirs(os.path.dirname(output_path), exist_ok=True)
+        # if output_path is just a filename in the current directory.
         image.save(output_path)
         print(f"Image saved successfully to: {os.path.abspath(output_path)}") # Print absolute path for clarity
         return output_path
