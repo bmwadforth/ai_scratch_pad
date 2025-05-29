@@ -4,9 +4,11 @@ from stable_diffusion import text_to_picture
 print("\n--- Running Example 1 ---")
 output_file_1 = "my_generated_image_1.png"
 text_to_picture(
-    prompt="A futuristic city at sunset, highly detailed, cyberpunk style",
+    prompt="A picture of a hill",
     output_path=output_file_1,
-    seed=42  # For reproducibility
+    height=512,  # Or even lower for testing, like 384
+    width=512,  # Or even lower for testing, like 384
+    seed=42
 )
 
 # Example 2: Different dimensions and steps
