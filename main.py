@@ -23,3 +23,16 @@ text_to_picture(
     guidance_scale=8.0,
     seed=123
 )
+
+# Example 3
+print("\n--- Running Example 3 ---")
+output_file_3 = "my_generated_image_3.png"
+text_to_picture(
+    prompt="An astronaut in space, highly detailed",
+    output_path=output_file_3,
+    height=1024,
+    width=1024,
+    num_inference_steps=75,
+    guidance_scale=8.0,
+    seed=1236
+)
