@@ -8,7 +8,6 @@ text_to_picture(
     output_path=output_file_1,
     height=512,  # Or even lower for testing, like 384
     width=512,  # Or even lower for testing, like 384
-    seed=42
 )
 
 # Example 2: Different dimensions and steps
@@ -21,7 +20,6 @@ text_to_picture(
     width=768,
     num_inference_steps=75,
     guidance_scale=8.0,
-    seed=123
 )
 
 # Example 3
@@ -34,5 +32,4 @@ text_to_picture(
     width=1024,
     num_inference_steps=75,
     guidance_scale=8.0,
-    seed=1236
 )
